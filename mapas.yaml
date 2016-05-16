@@ -1,0 +1,89 @@
+mapas:
+
+  - nome: "Guia Cultural de Favelas"
+    capa: "images/observatorio.jpg"
+    link: "http://guiaculturaldefavelas.org.br"
+
+  - nome: "Pontos de Cultura da Baixada Fluminense"
+    capa: "images/culturabf.jpg"
+    link: "http://culturabf.com.br/mapa/"
+
+  - nome: "Mapa de coletivos de mulheres"
+    capa: "images/mamu.jpg"
+    link: "http://www.mamu.net.br/#!/loc=-22.740723091194727,-42.935943603515625,10"
+
+  - nome: "Mapa Musical"
+    capa: "images/musical.jpg"
+    link: "http://www.mapamusicalrj.com.br/index.php/mapamusicalrj#-22.8541463/-42.9921528/10"
+
+  - nome: "Mapeamento de Saraus"
+    capa: "images/sarau.jpg"
+    link: "http://mufaproducoes.com/mapeamento-de-saraus-rj/"
+
+  - nome: "Mapa de Cultura (MinC)"
+    capa: "images/minc.jpg"
+    link: "http://mapas.cultura.gov.br/busca/##%28global:%28enabled:%28space:!t%29,filterEntity:space,map:%28center:%28lat:-22.897683210648072,lng:-42.56103515625%29,zoom:9%29%29%29"
+
+  - nome: "Mapa da Cultura RJ"
+    capa: "images/cultura.jpg"
+    link: "http://mapadecultura.rj.gov.br/cidade/rio-de-janeiro"
+
+  - nome: "Mapa dos Pontos de Cultura"
+    capa: "images/pontosrj.jpg"
+    link: "http://mapas.teiario.org.br/busca/##%28global:%28enabled:%28agent:!t%29,filterEntity:agent%29%29"
+
+  - nome: "Mapa Cultural da Rocinha"
+    capa: "images/rocinha.jpg"
+    link: "http://www.falaroca.com/mapa/#lat=-22.989741726611012&lng=-43.242569300765695&zoom=15"
+
+  - nome: "Universidade Popular de Arte e Ciência"
+    capa: "images/upac.jpg"
+    link: "http://upac.com.br/#/rede/mapa"
+
+  - nome: "Mapa da Participação"
+    capa: "images/participacao.jpg"
+    link: "http://www.forumrio.org/mapas/mapa-participacao/"
+
+  - nome: "Mapa da Desigualdade"
+    capa: "images/desigualdade.jpg"
+    link: "http://www.forumrio.org/mapas/mapa-desigualdade/"
+
+  - nome: "Street Art Rio"
+    capa: "images/streetart.jpg"
+    link: "http://streetartrio.com.br/"
+
+  - nome: "Dá pra ir de trem?"
+    capa: "images/trem.jpg"
+    link: "http://daprairdetrem.com.br/"
+
+  - nome: "Rádios Livres e Comunitárias"
+    capa: "images/radios.jpg"
+    link: "http://rebaixada.org/radcom/mapa/#lat=-23.248337493877745&lng=-43.22434137507339&zoom=8"
+
+  - nome: "Mapa da Dança"
+    capa: "images/danca.jpg"
+    link: "http://mapadadanca.coletivoecoar.org"
+
+  - nome: "Projetos e iniciativas colaborativas e comunitárias"
+    capa: "images/colab.jpg"
+    link: "https://www.google.com/maps/d/u/0/viewer?mid=110eRBSZUc1QP23uLXON7clgmv4I"
+
+  - nome: "Mapeamento da Inovação Cidadã no Rio de Janeiro"
+    capa: "images/civic.jpg"
+    link: "http://www.viveroiniciativasciudadanas.net/civics/iniciativas/?city=RioJaneiro"
+
+  - nome: "Cultura e Patrimônio Histórico"
+    capa: "images/patrimonio.jpg"
+    link: "https://www.google.com/maps/d/u/0/viewer?hl=pt_PT&mid=1rzxxy4LDnb2ddmlnR2GWa3n7oxo"
+
+  - nome: "Onde a Polícia Mata?"
+    capa: "images/policiamata.jpg"
+    link: "http://ondeapoliciamata.org/"
+
+  - nome: "Mapeando (Prefeitura RJ)"
+    capa: "images/mapeando.jpg"
+    link: "http://mapeando.rio.gov.br/"
+
+  - nome: "Escolas Ocupadas"
+    capa: "images/escolas.jpg"
+    link: "https://www.google.com/maps/d/viewer?hl=pt-BR&authuser=0&mid=1lIERA_NZxZTneTIpZ5F0nrxZ_5k/"
