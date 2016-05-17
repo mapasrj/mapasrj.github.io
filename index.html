@@ -21,10 +21,13 @@
 		<meta name="description" content="Mapas na cidade do Rio de Janeiro" />
 		<meta name="keywords" content="mapa, rio de janeiro, cartografia" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="http://cdn.jsdelivr.net/lodash/4.12.0/lodash.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.min.js"></script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
+		<script src="js/js-yaml.min.js"></script>
 		<script src="js/init.js"></script>
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
@@ -33,7 +36,7 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<body>
+	<body id="app">
 
 		<!-- Wrapper -->
 			<div class="wrapper style1">
@@ -44,172 +47,49 @@
 							<h1><a href="index.html">Mapas no Rio de Janeiro</a></h1>
 							<span class="tag"></span>
 						</div>
-				<!-- 		<nav id="nav">
+						<!--
+						<nav id="nav">
 							<ul>
 								<li class="active"><a href="index.html">Homepage</a></li>
 								<li><a href="left-sidebar.html">Left Sidebar</a></li>
 								<li><a href="right-sidebar.html">Right Sidebar</a></li>
 								<li><a href="no-sidebar.html">No Sidebar</a></li>
 							</ul>
-						</nav> -->
+						</nav>
+						-->
 					</div>
 
 				<!-- Banner -->
 					<div id="banner" class="container">
 						<section>
-							<p>Esta é uma listagem provisória e <b>em construção</b> de iniciativas de mapeamento no Rio de Janeiro. O objetivo é facilitar o (re)conhecimento dos grupos e o intercâmbio de metodologias, tecnologias e informações sobre cartografia comunitárias, culturais ou inovadoras na cidade.
-
-						Se você desenvolve algum mapeamento na cidade, você pode <a href="http://bit.ly/mapasrio"> se juntar ao grupo</a> e <a href="https://github.com/mapasrj/mapasrj.github.io" target="_blank">editar esta página</a>.
+							<p>
+								Esta é uma listagem provisória e <b>em construção</b> de iniciativas de mapeamento no Rio de Janeiro. O objetivo é facilitar o (re)conhecimento dos grupos e o intercâmbio de metodologias, tecnologias e informações sobre cartografia comunitárias, culturais ou inovadoras na cidade. Se você desenvolve algum mapeamento na cidade, você pode <a href="http://bit.ly/mapasrio"> se juntar ao grupo</a> e <a href="https://github.com/mapasrj/mapasrj.github.io" target="_blank">editar esta página</a>.
 							</p>
 						</section>
 					</div>
 
-
 					<div id="extra">
+
 						<div class="container">
-							<div class="row no-collapse-1">
-								<section class="4u"> <a href="#" class="image featured"><img src="images/observatorio.jpg" alt=""></a>
-									<div class="box">
-										<p>Guia Cultural de Favelas</p>
-										<a href="http://guiaculturaldefavelas.org.br/" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-								
 
-								<section class="4u"> <a href="http://culturabf.com.br/mapa/" target="_blank" class="image featured"><img src="images/culturabf.jpg" alt=""></a>
-									<div class="box">
-										<p>Pontos de Cultura da Baixada Fluminense</p>
-										<a href="http://culturabf.com.br/mapa/" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-								<section class="4u"> <a href="http://www.mamu.net.br/#!/loc=-22.740723091194727,-42.935943603515625,10" target="_blank" class="image featured"><img src="images/mamu.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapa de coletivos de mulheres</p>
-										<a href="http://www.mamu.net.br/#!/loc=-22.740723091194727,-42.935943603515625,10" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-								
-							</div>
-							<div class="row no-collapse-1">
-								<section class="4u"> <a href="http://www.mapamusicalrj.com.br/index.php/mapamusicalrj#-22.8541463/-42.9921528/10" target="_blank" class="image featured"><img src="images/musical.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapa Musical</p>
-										<a href="http://www.mapamusicalrj.com.br/index.php/mapamusicalrj#-22.8541463/-42.9921528/10" class="button">Veja mais</a> </div>
-								</section>
-								<section class="4u"> <a href="http://mufaproducoes.com/mapeamento-de-saraus-rj/" target="_blank" class="image featured"><img src="images/sarau.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapeamento de Saraus</p>
-										<a href="http://mufaproducoes.com/mapeamento-de-saraus-rj/" class="button">Veja mais</a> </div>
-								</section>
+							<div class="row no-collapse-1" v-for="mapas in mapasInRows">
 
-	<section class="4u"> <a href="http://mapas.cultura.gov.br/busca/##%28global:%28enabled:%28space:!t%29,filterEntity:space,map:%28center:%28lat:-22.897683210648072,lng:-42.56103515625%29,zoom:9%29%29%29" target="_blank" class="image featured"><img src="images/minc.jpg" alt=""></a>
+								<section class="4u" v-for="mapa in mapas">
+									<a href="{{mapa.url}}" class="image featured">
+										<img src="{{mapa.capa}}" alt="">
+									</a>
 									<div class="box">
-										<p>Mapa de Cultura (MinC)</p>
-										<a href="http://mapas.cultura.gov.br/busca/##%28global:%28enabled:%28space:!t%29,filterEntity:space,map:%28center:%28lat:-22.897683210648072,lng:-42.56103515625%29,zoom:9%29%29%29" class="button">Veja mais</a> </div>
-								</section>
-
-								<section class="4u"> <a href="http://mapadecultura.rj.gov.br/cidade/rio-de-janeiro" target="_blank" class="image featured"><img src="images/cultura.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapa da Cultura RJ</p>
-										<a href="http://mapadecultura.rj.gov.br/cidade/rio-de-janeiro" class="button">Veja mais</a> </div>
-								</section>
-
-								<section class="4u"> <a href="http://mapas.teiario.org.br/busca/##%28global:%28enabled:%28agent:!t%29,filterEntity:agent%29%29" target="_blank" class="image featured"><img src="images/pontosrj.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapa dos Pontos de Cultura</p>
-										<a href="http://mapas.teiario.org.br/busca/##%28global:%28enabled:%28agent:!t%29,filterEntity:agent%29%29" class="button">Veja mais</a> </div>
-								</section>
-
-	<section class="4u"> <a href="http://www.falaroca.com/mapa/#lat=-22.989741726611012&lng=-43.242569300765695&zoom=15" target="_blank" class="image featured"><img src="images/rocinha.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapa Cultural da Rocinha</p>
-										<a href="http://www.falaroca.com/mapa/#lat=-22.989741726611012&lng=-43.242569300765695&zoom=15" class="button">Veja mais</a> </div>
-								</section>
-
-								<section class="4u"> <a href="http://upac.com.br/#/rede/mapa" target="_blank" class="image featured"><img src="images/upac.jpg" alt=""></a>
-									<div class="box">
-										<p>Universidade Popular de Arte e Ciência</p>
-										<a href="http://upac.com.br/#/rede/mapa" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-								<section class="4u"> <a href="http://www.forumrio.org/mapas/mapa-participacao/" target="_blank" class="image featured"><img src="images/participacao.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapa da Participação</p>
-										<a href="http://www.forumrio.org/mapas/mapa-participacao/" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-
-						<section class="4u"> <a href="http://www.forumrio.org/mapas/mapa-desigualdade/" target="_blank" class="image featured"><img src="images/desigualdade.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapa da Desigualdade</p>
-										<a href="http://www.forumrio.org/mapas/mapa-desigualdade/" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-
-	
-	<section class="4u"> <a href="http://streetartrio.com.br/" target="_blank" class="image featured"><img src="images/streetart.jpg" alt=""></a>
-									<div class="box">
-										<p>Street Art Rio</p>
-										<a href="http://streetartrio.com.br/" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-
-<section class="4u"> <a href="http://daprairdetrem.com.br/" target="_blank" class="image featured"><img src="images/trem.jpg" alt=""></a>
-									<div class="box">
-										<p>Dá pra ir de trem?</p>
-										<a href="http://daprairdetrem.com.br/" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-
-
-		
-<section class="4u"> <a href="http://rebaixada.org/radcom/mapa/#lat=-23.248337493877745&lng=-43.22434137507339&zoom=8" target="_blank" class="image featured"><img src="images/radios.jpg" alt=""></a>
-									<div class="box">
-										<p>Rádios Livres e Comunitárias</p>
-										<a href="http://rebaixada.org/radcom/mapa/#lat=-23.248337493877745&lng=-43.22434137507339&zoom=8" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-
-								<section class="4u"> <a href="http://mapadadanca.coletivoecoar.org/" target="_blank" class="image featured"><img src="images/danca.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapa da Dança</p>
-										<a href="http://mapadadanca.coletivoecoar.org" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-		
-								<section class="4u"> <a href="https://www.google.com/maps/d/u/0/viewer?mid=110eRBSZUc1QP23uLXON7clgmv4I" class="image featured"><img src="images/colab.jpg" alt=""></a>
-									<div class="box">
-										<p>Projetos e iniciativas colaborativas e comunitárias</p>
-										<a href="https://www.google.com/maps/d/u/0/viewer?mid=110eRBSZUc1QP23uLXON7clgmv4I" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-<section class="4u"> <a href="#" class="image featured"><img src="images/civic.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapeamento da Inovação Cidadã no Rio de Janeiro</p>
-										<a href="http://www.viveroiniciativasciudadanas.net/civics/iniciativas/?city=RioJaneiro" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-
-
-								<section class="4u"> <a href="https://www.google.com/maps/d/u/0/viewer?hl=pt_PT&mid=1rzxxy4LDnb2ddmlnR2GWa3n7oxo" class="image featured"><img src="images/patrimonio.jpg" alt=""></a>
-									<div class="box">
-										<p>Cultura e Patrimônio Histórico</p>
-										<a href="https://www.google.com/maps/d/u/0/viewer?hl=pt_PT&mid=1rzxxy4LDnb2ddmlnR2GWa3n7oxo" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-
-								<section class="4u"> <a href="http://ondeapoliciamata.org/" target="_blank" class="image featured"><img src="images/policiamata.jpg" alt=""></a>
-									<div class="box">
-										<p>Onde a Polícia Mata?</p>
-										<a href="http://ondeapoliciamata.org/" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-
-<section class="4u"> <a href="http://mapeando.rio.gov.br" target="_blank" class="image featured"><img src="images/mapeando.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapeando (Prefeitura RJ)</p>
-										<a href="http://mapeando.rio.gov.br/" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-
-<section class="4u"> <a href="http://mapeando.rio.gov.br" target="_blank" class="image featured"><img src="images/mapeando.jpg" alt=""></a>
-									<div class="box">
-										<p>Mapeando (Prefeitura RJ)</p>
-										<a href="http://mapeando.rio.gov.br/" target="_blank" class="button">Veja mais</a> </div>
-								</section>
-<section class="4u"> <a href="https://www.google.com/maps/d/viewer?hl=pt-BR&authuser=0&mid=1lIERA_NZxZTneTIpZ5F0nrxZ_5k" target="_blank" class="image featured"><img src="images/escolas.jpg" alt=""></a>
-									<div class="box">
-										<p>Escolas Ocupadas</p>
-										<a href="https://www.google.com/maps/d/viewer?hl=pt-BR&authuser=0&mid=1lIERA_NZxZTneTIpZ5F0nrxZ_5k/" target="_blank" class="button">Veja mais</a> </div>
+										<p>{{mapa.nome}}</p>
+										<a href="{{mapa.url}}" target="_blank" class="button">
+											Veja mais
+										</a>
+									</div>
 								</section>
 
 							</div>
+
 						</div>
+
 					</div>
 
 	</div>
