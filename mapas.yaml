@@ -87,3 +87,7 @@ mapas:
   - nome: "Escolas Ocupadas"
     capa: "images/escolas.jpg"
     link: "https://www.google.com/maps/d/viewer?hl=pt-BR&authuser=0&mid=1lIERA_NZxZTneTIpZ5F0nrxZ_5k/"
+
+  - nome: "Alimentos Orgânicos"
+    capa: "images/organicos.jpg"
+    link: "https://www.google.com/maps/d/edit?mid=1b984D8bbD7RUQOGe4xT-h7dfRrc"
