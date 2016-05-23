@@ -91,3 +91,7 @@ mapas:
   - nome: "Alimentos Orgânicos"
     capa: "images/organicos.jpg"
     link: "https://www.google.com/maps/d/edit?mid=1b984D8bbD7RUQOGe4xT-h7dfRrc"
+
+    nome: "Mapas da Prefeitura"
+    capa: "images/organicos.jpg"
+    link: "http://pcrj.maps.arcgis.com/home/"
