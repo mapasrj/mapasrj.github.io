@@ -93,5 +93,5 @@ mapas:
     link: "https://www.google.com/maps/d/edit?mid=1b984D8bbD7RUQOGe4xT-h7dfRrc"
 
   - nome: "Mapas da Prefeitura"
-    capa: "images/organicos.jpg"
+    capa: "images/prefeitura.jpg"
     link: "http://pcrj.maps.arcgis.com/home/"
