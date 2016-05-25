@@ -95,3 +95,11 @@ mapas:
   - nome: "Mapas da Prefeitura"
     capa: "images/prefeitura.png"
     link: "http://pcrj.maps.arcgis.com/home/"
+
+  - nome: "Mapas Digital (Rio Negócios)"
+    capa: "images/digital.png"
+    link: "http://rio-negocios.com/mapa-digital-rio/"
+
+  - nome: "Óleo e Gás"
+    capa: "images/oleo.png"
+    link: "http://rio-negocios.com/mapa-digital-oeg/"
