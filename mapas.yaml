@@ -4,6 +4,10 @@ mapas:
     capa: "images/observatorio.jpg"
     link: "http://guiaculturaldefavelas.org.br"
 
+  - nome: "Rede de Rodas de Samba"
+    capa: "images/observatorio.jpg"
+    link: "images/rodadesamba.jpg"
+
   - nome: "Pontos de Cultura da Baixada Fluminense"
     capa: "images/culturabf.jpg"
     link: "http://culturabf.com.br/mapa/"
